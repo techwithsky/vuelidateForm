@@ -2,15 +2,16 @@
     <div class="form">
         <form @submit.prevent="submitForm">
             <div class="inp-span">
-                <label for="name">Name :</label><br>
+                <label class="red bold" for="name">Name :</label><br>
                 <input type="text" placeholder="Enter Name" v-model="name">
                 <span class="invalid" v-if="!$v.name.required && $v.name.$dirty">Name is required</span>
                 <span class="invalid" v-if="!$v.name.alpha && $v.name.required && $v.name.$dirty">only type alphabets</span>
                 <span class="invalid" v-if="(!$v.name.minLength || !$v.name.maxLength) && $v.name.$dirty">Name must be between {{ $v.name.$params.minLength.min }} and {{ $v.name.$params.maxLength.max }}</span><br>
             </div>
-            <div class="inp-span">
+            
+            <div class="inp-span mt-100">
                 <label for="email">Email :</label><br>
-                <input type="email" placeholder="Enter Email Id" v-model="email">
+                <input class="" type="email" placeholder="Enter Email Id" v-model="email">
                 <span class="invalid" v-if="!$v.email.required && $v.email.$dirty">Email is required</span>
                 <span class="invalid" v-if="!$v.email.email && $v.email.$dirty">Invalid email ID</span>
                 <span class="valid" v-if="$v.email.email && $v.email.required && $v.email.$dirty">valid email ID</span><br>
